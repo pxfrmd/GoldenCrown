@@ -1,0 +1,6 @@
+@GoldenCrown.Domain_HostAddress = http://localhost:5201
+
+GET {{GoldenCrown.Domain_HostAddress}}/
+Accept: application/json
+
+###
