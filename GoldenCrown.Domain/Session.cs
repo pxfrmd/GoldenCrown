@@ -1,10 +1,19 @@
 namespace GoldenCrown.Domain;
 
 public class Session
-{
-    private int userId { get; set; }
-    private string token = "someRandomToken";
-    private static DateTime date = DateTime.Now;
-    
-    private DateTime expiresOn = date.AddHours(1);
+{   
+    public int UserId { get;}
+    public string token { get; set; }
+    public DateTime timeOfSession { get;}
+    public DateTime sessionExpiresOn { get; }
+
+    public Session(User user)
+    {
+        UserId = user.Id;
+        token = "someRandomToken";
+        timeOfSession = DateTime.Now;
+        sessionExpiresOn = timeOfSession.AddHours(1);
+    }
+
 }
+
